@@ -1,0 +1,12 @@
+{
+    "name": "webtest",
+    "version": "1.0.0",
+    "description": "Cypress test example",
+    "main": "index.js",
+    "private": true,
+    "scripts": {},
+    "author": "Dm",
+    "devDependencies": {
+        "cypress": "10.1.0"
+    }
+}
