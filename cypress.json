@@ -1,9 +1,0 @@
-{
-    "defaultCommandTimeout": 10000,
-    "env": {
-        "GeneralVariables" : {
-            "defaultURL": "http://example-url.example.com",
-            "defaultURL_API": "http://api-example-url.example.com"
-        }
-    }
-}
