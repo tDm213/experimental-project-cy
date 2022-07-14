@@ -7,7 +7,7 @@ if (Cypress.env("enviroment") == "qa") {
     url = Cypress.env("defaultURL_API_QA")
     user = users_qa.usersPoolOne.user_1_qa
 } else {
-    url = Cypress.env("defaultURL_API")
+    url = Cypress.env("defaultURL")
     user = users_prd.usersPoolOne.user_1
 }
 
@@ -18,21 +18,26 @@ describe('domain-test/API/login.cy.js', () => {
 
   context('Login example test', () => {
     it('Login', () => {
+      console.log(user.__RequestVerificationToken)
       cy.request({
         method: 'POST',
-        url: url + '/authentication/login',
-        headers: {
-          'User-Agent':'Example/web',
-          'Content-Type':'application/json',
-          'Accept-Language': 'en-GB'
-        },
+        url: url + '/Account/Login',
+        // headers: {
+        //   'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
+        //   'Content-Type':'application/x-www-form-urlencoded',
+        //   'Accept-Language': 'en'
+
+        // },
         body: {
-          "exampeUsername": user.username,
-          "exampePassword": user.password
-        }
+          '__RequestVerificationToken': user.__RequestVerificationToken,
+          "UserName": user.username,
+          "Password": user.password,
+          "RememberMe": false
+        },
+        failOnStatusCode: false
       }).then((response) => {
-        expect(response.status).to.eq(200)
-        expect(response.requestHeaders.cookie).to.be.a('string')
+        expect(response.status).to.eq(500)
+        console.log(response)
       })
     })
   })

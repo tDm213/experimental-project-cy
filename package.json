@@ -7,6 +7,6 @@
     "scripts": {},
     "author": "Dm",
     "devDependencies": {
-        "cypress": "10.2.0"
+        "cypress": "10.3.0"
     }
 }

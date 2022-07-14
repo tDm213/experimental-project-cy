@@ -2,14 +2,15 @@ var Tm = Cypress.config('defaultCommandTimeout')
 
 export const loginPage = {
     login(url, username, password) {
-        cy.visit(`${url}/login`)
-        cy.get('#exampeUsernameField').type(username)
-        cy.get('#exampePasswordField').type(password)
-        cy.get('#exampleLoginButton').click()
+        cy.visit(`${url}/Account/Login`)
+        cy.get('#UserName').type(username)
+        cy.get('#Password').type(password)
+        cy.get('[value="Log in"]').click()
 
         // if you need a custom delay
         cy.wait(Tm/4)
 
-        cy.url().should('not.eq', `${url}/login`)
+        cy.get('#logoutForm').should('be.visible')
+        cy.url().should('not.eq', `${url}/Account/Login`)
     }
 }
