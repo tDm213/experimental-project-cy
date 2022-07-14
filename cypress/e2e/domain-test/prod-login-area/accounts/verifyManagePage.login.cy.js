@@ -1,4 +1,3 @@
-import { loginPage } from '../../../../PageObjects/loginPage'
 import { managePage } from '../../../../PageObjects/managePage'
 import { users_prd } from '../../../../fixtures/users/users_prod.js'
 import { users_qa } from '../../../../fixtures/users/users_qa.js'

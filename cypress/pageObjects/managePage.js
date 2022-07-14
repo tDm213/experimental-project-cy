@@ -1,5 +1,3 @@
-var Tm = Cypress.config('defaultCommandTimeout')
-
 export const managePage = {
     verifyManagePageURLs(url) {
         cy.visit(`${url}/Manage`)

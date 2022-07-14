@@ -1,5 +1,3 @@
-var Tm = Cypress.config('defaultCommandTimeout')
-
 export const changePasswordPage = {
     changePassword(url, password) {
         cy.visit(`${url}/Manage/ChangePassword`)
