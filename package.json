@@ -4,7 +4,15 @@
     "description": "Cypress test example",
     "main": "index.js",
     "private": true,
-    "scripts": {},
+    "scripts": {
+        "regression-login-firefox-prod": "npx cypress run --browser firefox --spec 'cypress/e2e/regression-tests/**/**/*.login.cy.js'",
+        "regression-login-firefox-qa": "npx cypress run --env enviroment=qa --browser firefox --spec 'cypress/e2e/regression-tests/**/**/*.login.cy.js'",
+        "regression-login-firefox-prod-small-screen": "npx cypress run --env viewport=iphone-5 --browser firefox --spec 'cypress/e2e/regression-tests/**/**/*.reg.cy.js'",
+        "regression-registration-chrome-prod": "npx cypress run --browser chrome --spec 'cypress/e2e/regression-tests/**/**/*.reg.cy.js'",
+        "regression-registration-chrome-qa": "npx cypress run --env enviroment=qa --browser chrome --spec 'cypress/e2e/regression-tests/**/**/*.reg.cy.js'",
+        "regression-registration-chrome-prod-small-screen": "npx cypress run --env viewport=iphone-5 --browser chrome --spec 'cypress/e2e/regression-tests/**/**/*.reg.cy.js'",
+        "regression-logout-area-chrome-prod": "npx cypress run --browser chrome --spec 'cypress/e2e/regression-tests/**/**/*.logout.cy.js'"
+    },
     "author": "Dm",
     "devDependencies": {
         "cypress": "10.3.0"
