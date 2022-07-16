@@ -1,4 +1,4 @@
-export const footer = {
+export const footerLogout = {
 
     verify_footer(url) {
         cy.visit(url)

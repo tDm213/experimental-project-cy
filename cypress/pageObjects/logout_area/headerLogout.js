@@ -1,4 +1,4 @@
-export const header = {
+export const headerLogout = {
 
     verify_length_left_header(url) {
         cy.visit(url)

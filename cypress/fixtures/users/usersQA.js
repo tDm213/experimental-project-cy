@@ -1,4 +1,4 @@
-export const users_qa = {
+export const usersQA = {
     "usersPoolOne": {
         "user_1_qa": {
             "username": "example-username-qa",
