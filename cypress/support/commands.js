@@ -45,4 +45,8 @@ Cypress.on('uncaught:exception', (err) => {
   if (err.message.includes("jQuery is not defined")) {
     return false
   }
+  if (err.message.includes("uncaught:exception")) {
+    return false
+  }
+  
 })

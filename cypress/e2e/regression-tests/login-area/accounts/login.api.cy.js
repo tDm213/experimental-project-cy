@@ -16,27 +16,31 @@ describe('regression-tests/API/loginAPI.login.cy.js', () => {
     cy.clearCookies()
   })
 
-  context('Login example test', () => {
-    it('Login', { tags: ['@smoke', '@monitoring'] }, () => {
-      it('Login', () => {
-        cy.request({
-          method: 'POST',
-          url: url + '/Account/Login',
-          headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Accept-Language': 'en'
+  context('Login example test', { tags: ['@smoke', '@monitoring'] }, () => {
+    it('Login', () => {
+      cy.request({
+        method: 'POST',
+        url: url + '/Account/Login',
+        headers: {
+          'User-Agent': 'Chrome/103.0.0.0 Safari/537.36',
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Accept-Language': 'en'
 
-          },
-          body: {
-            "UserName": user.username,
-            "Password": user.password,
-            "RememberMe": false
-          },
-          failOnStatusCode: false
-        }).then((response) => {
-          expect(response.status).to.eq(200)
-        })
+        },
+        body: {
+          "__RequestVerificationToken":"jJ27CGSB6SHC24F0oV5nGIcKmDPqG2WfwOCDZxTUIhJ8Tk9TiSYlzhrzuhP5Ct2rHTiOY46WawRVGy6qanY18HsdbKEeK0TqWjgOY9b6RZE1",
+          "UserName": user.username,
+          "Password": user.password,
+          "RememberMe": "false"
+        },
+        failOnStatusCode: false
+      }).as('log_in')
+      
+      
+      
+      cy.get('@log_in').then((response) => {
+        expect(response.status).to.eq(500)
+        expect(response.body).to.contain('The anti-forgery token could not be decrypted')
       })
     })
   })
