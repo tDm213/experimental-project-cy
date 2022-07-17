@@ -5,10 +5,10 @@
     "main": "index.js",
     "private": true,
     "scripts": {
-        "regression-login-firefox-prod": "npx cypress run --browser firefox --spec 'cypress/e2e/regression-tests/**/**/*.login.cy.js'",
-        "regression-login-firefox-qa": "npx cypress run --env enviroment=qa --browser firefox --spec 'cypress/e2e/regression-tests/**/**/*.login.cy.js'",
-        "regression-registration-chrome-prod-small-screen": "npx cypress run --env viewport=iphone-5 --browser chrome --spec 'cypress/e2e/regression-tests/**/**/*.reg.cy.js'",
-        "regression-logout-area-chrome-prod": "npx cypress run --browser chrome --spec 'cypress/e2e/regression-tests/**/**/*.logout.cy.js'",
+        "cy:regression:firefox:prod": "npx cypress run --browser firefox --spec 'cypress/e2e/regression-tests/**/**/*.login.cy.js'",
+        "cy:regression:firefox:qa": "npx cypress run --env enviroment=qa --browser firefox --spec 'cypress/e2e/regression-tests/**/**/*.login.cy.js'",
+        "cy:regression:smallScreen": "npx cypress run --env viewport=iphone-5 --browser chrome --spec 'cypress/e2e/regression-tests/**/**/*.reg.cy.js'",
+        "cy:regression:logoutArea": "npx cypress run --browser chrome --spec 'cypress/e2e/regression-tests/**/**/*.logout.cy.js'",
         "cy:smoke": "npx cypress run --env grepTags=@smoke --spec 'cypress/e2e/regression-tests/login-area/accounts/*.cy.js'"
     },
     "author": "Dm",
