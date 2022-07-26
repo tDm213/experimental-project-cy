@@ -24,29 +24,28 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('login_ui', (url, username, password) => {
+Cypress.Commands.add("login_ui", (url, username, password) => {
   cy.session([username, password], () => {
-    cy.visit(`${url}/Account/Login`)
-    cy.get('#UserName').type(username)
-    cy.get('#Password').type(password)
-    cy.get('[value="Log in"]').click()
+    cy.visit(`${url}/Account/Login`);
+    cy.get("#UserName").type(username);
+    cy.get("#Password").type(password);
+    cy.get('[value="Log in"]').click();
 
     // verify login
-    cy.get('#logoutForm').should('be.visible')
-    cy.url().should('not.eq', `${url}/Account/Login`)
-  })
-})
+    cy.get("#logoutForm").should("be.visible");
+    cy.url().should("not.eq", `${url}/Account/Login`);
+  });
+});
 
 // Skip next errors
-Cypress.on('uncaught:exception', (err) => {
+Cypress.on("uncaught:exception", (err) => {
   if (err.message.includes("Unexpected token '<'")) {
-    return false
+    return false;
   }
   if (err.message.includes("jQuery is not defined")) {
-    return false
+    return false;
   }
   if (err.message.includes("uncaught:exception")) {
-    return false
+    return false;
   }
-  
-})
+});
