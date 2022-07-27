@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const AllureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
   e2e: {
@@ -12,10 +13,9 @@ module.exports = defineConfig({
       // Default is 0
       openMode: 0,
     },
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
       require("./cypress/plugins/index.js")(on, config);
+      AllureWriter(on, config);
       return config;
     },
   },

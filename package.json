@@ -5,14 +5,16 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "cy:regression:firefox:prod": "npx cypress run --browser firefox --spec 'cypress/e2e/regression-tests/**/**/*.login.cy.js'",
-    "cy:regression:firefox:qa": "npx cypress run --env enviroment=qa --browser firefox --spec 'cypress/e2e/regression-tests/**/**/*.login.cy.js'",
-    "cy:regression:smallScreen": "npx cypress run --env viewport=iphone-5 --browser chrome --spec 'cypress/e2e/regression-tests/**/**/*.reg.cy.js'",
-    "cy:regression:logoutArea": "npx cypress run --browser chrome --spec 'cypress/e2e/regression-tests/**/**/*.logout.cy.js'",
-    "cy:smoke": "npx cypress run --env grepTags=@smoke --spec 'cypress/e2e/regression-tests/login-area/accounts/*.cy.js'"
+    "cy:regression:firefox:prod": "npx cypress run --browser firefox --spec 'cypress/e2e/regression-tests/**/**/*.login.cy.js' --env allure=true",
+    "cy:regression:firefox:qa": "npx cypress run --env enviroment=qa allure=true --browser firefox --spec 'cypress/e2e/regression-tests/**/**/*.login.cy.js'",
+    "cy:regression:smallScreen": "npx cypress run --env viewport=iphone-5 allure=true --browser chrome --spec 'cypress/e2e/regression-tests/**/**/*.reg.cy.js'",
+    "cy:regression:logoutArea": "npx cypress run --browser chrome --spec 'cypress/e2e/regression-tests/**/**/*.logout.cy.js' --env allure=true",
+    "cy:smoke": "npx cypress run --env grepTags=@smoke allure=true --spec 'cypress/e2e/regression-tests/login-area/accounts/*.cy.js'",
+    "allure:report": "allure generate allure-results"
   },
   "author": "Dm",
   "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.28.0",
     "cypress": "^10.3.0",
     "cypress-grep": "^3.0.2",
     "prettier": "^2.7.1"
