@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 const AllureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
+  projectId: "iyfq1k",
   e2e: {
     experimentalSessionAndOrigin: true,
     videoCompression: false,
@@ -19,5 +20,4 @@ module.exports = defineConfig({
       return config;
     },
   },
-  projectId: "iyfq1k",
 });
