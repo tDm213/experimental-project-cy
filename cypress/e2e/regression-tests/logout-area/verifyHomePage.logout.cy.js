@@ -68,7 +68,7 @@ describe("regression-tests/logout-area/verifyHomePage.cy.js", () => {
       cy.contains("Visit now »").should(
         "have.attr",
         "href",
-        "http://fail.fail"
+        "http://failed_link"
       );
     });
 
