@@ -19,4 +19,5 @@ module.exports = defineConfig({
       return config;
     },
   },
+  projectId: "iyfq1k",
 });
