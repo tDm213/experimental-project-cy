@@ -61,7 +61,7 @@ describe("regression-tests/logout-area/verifyHomePage.cy.js", () => {
       headerLogout.verify_login_page_logout(url);
     });
 
-    it(`Verify body on ${size} screen`, () => {
+    it(`Verify body on ${size} screen (This test should fail)`, () => {
       cy.visit(url);
       cy.get('[src="/Image/EA_banner_white_v1.jpg"]').should("be.visible");
       cy.contains("Visit now »").should(
