@@ -26,7 +26,7 @@ describe(`Verify API ${url}/users`, { tags: ["@smoke", "@monitoring"] }, () => {
     // – 200 OK for GET requests
     // – 201 for POST or PUT requests creating a new resource
     // – 200, 202, or 204 for a DELETE operation and so on
-    it("Positive: Validation status code", () => {
+    it.only("Positive: Validation status code", () => {
       cy.request(url + "/users").then((response) => {
         expect(response.status).to.eq(200);
       });

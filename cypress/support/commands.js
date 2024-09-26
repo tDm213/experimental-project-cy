@@ -37,6 +37,15 @@ Cypress.Commands.add("login_ui", (url, username, password) => {
   });
 });
 
+Cypress.Commands.add("login_bank", (url, username) => {
+  cy.session([username], () => {
+    cy.visit(`${url}/angularJs-protractor/BankingProject/#/customer`);
+    cy.get('[id="userSelect"]').select(username)
+    cy.get('[type="submit"]').click()
+    cy.url().should("eq", `${url}/angularJs-protractor/BankingProject/#/account`);
+  });
+});
+
 // Skip next errors
 Cypress.on("uncaught:exception", (err) => {
   if (err.message.includes("Unexpected token '<'")) {
