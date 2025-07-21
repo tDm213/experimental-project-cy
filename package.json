@@ -14,9 +14,9 @@
   },
   "author": "Dm",
   "devDependencies": {
-    "@shelex/cypress-allure-plugin": "^2.28.0",
-    "cypress": "^10.3.0",
-    "cypress-grep": "^3.0.2",
-    "prettier": "^2.7.1"
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "cypress": "^14.5.2",
+    "cypress-grep": "^3.0.4",
+    "prettier": "^3.6.2"
   }
 }

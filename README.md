@@ -1,60 +1,53 @@
-# Cypress Experimental Project
+# 🚀 Cypress Experimental Project
 
-The purpose of this Project is to test Cypress implementations and to see the way they work.
+This project serves as a sandbox for exploring and testing various Cypress features and configurations.
 
-In this project we are able to:
+## ✅ Features
 
-- Run specific parts based on our needs
-- Implement Cypress features
+- 🔍 Run targeted test suites based on needs  
+- 🧪 Experiment with Cypress capabilities  
+- 🌐 Cross-environment, cross-browser, and cross-resolution testing  
+- 📁 Split test cases: `login.cy.js`, `reg.cy.js`, `api.cy.js`  
+- 🔁 Retry logic implemented  
+- 🧱 Basic Page Object Model (POM) structure  
+- 💾 Use of `cy.session` for session persistence  
+- 🗂️ Tag-based test execution  
+- 🔌 API test examples
 
-## Note
+---
 
-Before setting up this project, we need to make sure that we have installed:
+## ⚙️ Prerequisites
 
-- nodeJS
-- Chrome (browser)
-- Firefox (browser)
+Make sure the following are installed **before setting up** this project:
 
-## Run
+- [Node.js](https://nodejs.org/)
+- [Google Chrome](https://www.google.com/chrome/)
+- [Mozilla Firefox](https://www.mozilla.org/firefox/)
 
-- Headless Run for the folder
+---
 
-```sh
+## 🚦 Running Tests
+
+### ▶️ Run Specific Test Folder in Headless Mode (Chrome)
+
+```bash
 npx cypress run --browser chrome --spec "cypress/e2e/regression-tests/login-area/accounts/*.cy.js"
 ```
-
-- Override URL
-
-```sh
+🌐 Override the Default URL
+```bash
 npx cypress run --env defaultURL=http://example-url.example.com
 ```
-
-- Environment Selector
-
-```sh
+🧪 Select Testing Environment (e.g., QA)
+```bash
 npx cypress run --env enviroment=qa --browser chrome
 ```
-
-- Run in a small screen resolution
-
-```sh
+🖥️ Run with Small Screen Resolution
+```bash
 npm run cy:regression:smallScreen
 ```
-
-- Run only smoke tests (with the label "smoke")
-
-```sh
+🔥 Run Only Smoke Tests (Tagged "smoke")
+```bash
 npm run cy:smoke
 ```
 
-## What features can be found in this Project:
-
-- Cross-environmental check
-- Cross-browser check
-- Cross-resolution check
-- Split tests for login.cy.js, reg.cy.js, api.cy.js
-- API test
-- Retry feature
-- Basic implementation of POM
-- Basic implementation of cy.session
-- Basic implementation of Tags
+✍️ Author Made by @tDm213
